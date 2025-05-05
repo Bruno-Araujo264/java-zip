@@ -13,7 +13,7 @@ public class Main {
         JdbcTemplate jdbcTemplate = conexaoBanco.getJdbcTemplate();
         LeitorDados leitorDados = new LeitorDados(jdbcTemplate, s3Client);
         try {
-            leitorDados.processar(bucket, "planilhas/base-dados-route-finder.xlsx");
+            leitorDados.processar(bucket, "base-dados-route-finder.xlsx");
         } catch (Exception e) {
             System.out.println(String.format("Não foi possível processar os dados, erro: %s", e.getMessage()));
         }
